@@ -146,7 +146,7 @@
             border: none;
             border-radius: var(--radius-xl);
             font-family: 'Pretendard', sans-serif;
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
@@ -968,7 +968,7 @@
             height: 72px;
         }
         .nav-item i { font-size: 20px; }
-        .nav-item span { font-size: 10px; font-weight: 600; }
+        .nav-item span { font-size: 11px; font-weight: 600; }
         .nav-item.active { color: var(--green-primary); }
         /* Center button */
         .nav-center-wrap {
@@ -2193,7 +2193,7 @@
                     </div>
                     <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
                 </div>
-                <div onclick="goTo('p-card-pin')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; cursor:pointer;">
+                <div onclick="startResetPin()" style="display:flex; align-items:center; gap:14px; padding:15px 16px; cursor:pointer;">
                     <div style="width:36px; height:36px; background:#EDE7F6; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
                         <i class="fas fa-key" style="color:#4527A0; font-size:15px;"></i>
                     </div>
@@ -2565,9 +2565,66 @@
         </div>
     </section>
 
-</div>
+    <!-- ══════════════════════════════════════════
+         RESET PIN (카드 관리에서 진입)
+    ══════════════════════════════════════════ -->
+    <section class="page" id="p-reset-pin">
+    <div class="back-btn" onclick="goTo('page-card')"><i class="fas fa-chevron-left"></i></div>
+        <div class="pin-wrap">
+            <div class="pin-title" style="color:var(--green-primary);">Reset PIN</div>
+            <div style="font-size:10px; color:var(--gray-400); margin-bottom:28px; margin-top:-16px;">Enter a new 4-digit PIN</div>
+            <div class="pin-dots" id="pin-dots-reset">
+                <div class="pin-dot empty"></div>
+                <div class="pin-dot empty"></div>
+                <div class="pin-dot empty"></div>
+                <div class="pin-dot empty"></div>
+            </div>
+            <div class="num-pad" style="margin-top:auto;">
+                <div class="num-key" onclick="pinInput('reset',1)">1</div>
+                <div class="num-key" onclick="pinInput('reset',2)">2<div class="num-key-sub">ABC</div></div>
+                <div class="num-key" onclick="pinInput('reset',3)">3<div class="num-key-sub">DEF</div></div>
+                <div class="num-key" onclick="pinInput('reset',4)">4<div class="num-key-sub">GHI</div></div>
+                <div class="num-key" onclick="pinInput('reset',5)">5<div class="num-key-sub">JKL</div></div>
+                <div class="num-key" onclick="pinInput('reset',6)">6<div class="num-key-sub">MNO</div></div>
+                <div class="num-key" onclick="pinInput('reset',7)">7<div class="num-key-sub">PQRS</div></div>
+                <div class="num-key" onclick="pinInput('reset',8)">8<div class="num-key-sub">TUV</div></div>
+                <div class="num-key" onclick="pinInput('reset',9)">9<div class="num-key-sub">WXYZ</div></div>
+                <div class="num-key empty-key"></div>
+                <div class="num-key" onclick="pinInput('reset',0)">0</div>
+                <div class="num-key del" onclick="pinDel('reset')"><i class="fas fa-delete-left"></i></div>
+            </div>
+        </div>
+    </section>
 
-<!-- DEV SKIP ZONE: 우상단 5회 탭 → 홈으로 스킵 -->
+    <section class="page" id="p-reset-pin-confirm">
+    <div class="back-btn" onclick="goTo('p-reset-pin')"><i class="fas fa-chevron-left"></i></div>
+        <div class="pin-wrap">
+            <div class="pin-title" style="color:var(--green-primary);">Confirm New PIN</div>
+            <div style="font-size:10px; color:var(--gray-400); margin-bottom:28px; margin-top:-16px;">Re-enter your new 4-digit PIN</div>
+            <div class="pin-dots" id="pin-dots-resetconfirm">
+                <div class="pin-dot empty"></div>
+                <div class="pin-dot empty"></div>
+                <div class="pin-dot empty"></div>
+                <div class="pin-dot empty"></div>
+            </div>
+            <div class="num-pad" style="margin-top:auto;">
+                <div class="num-key" onclick="pinInput('resetconfirm',1)">1</div>
+                <div class="num-key" onclick="pinInput('resetconfirm',2)">2<div class="num-key-sub">ABC</div></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',3)">3<div class="num-key-sub">DEF</div></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',4)">4<div class="num-key-sub">GHI</div></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',5)">5<div class="num-key-sub">JKL</div></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',6)">6<div class="num-key-sub">MNO</div></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',7)">7<div class="num-key-sub">PQRS</div></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',8)">8<div class="num-key-sub">TUV</div></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',9)">9<div class="num-key-sub">WXYZ</div></div>
+                <div class="num-key empty-key"></div>
+                <div class="num-key" onclick="pinInput('resetconfirm',0)">0</div>
+                <div class="num-key del" onclick="pinDel('resetconfirm')"><i class="fas fa-delete-left"></i></div>
+            </div>
+        </div>
+    </section>
+
+</div>: 우상단 5회 탭 → 홈으로 스킵 -->
 <div id="dev-skip-zone" style="position:fixed; top:0; right:0; width:80px; height:80px; z-index:9999; -webkit-tap-highlight-color:transparent;" onclick="devSkipTap()"></div>
 <div id="dev-skip-toast" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.85); color:white; padding:14px 24px; border-radius:14px; font-size:15px; font-weight:700; display:none; z-index:9999; text-align:center; backdrop-filter:blur(8px);">⚡ Dev Skip<br><span style="font-size:12px; opacity:0.7;">홈 화면으로 이동</span></div>
 
@@ -2745,9 +2802,9 @@
     /* ═══════════════════════════════
        PIN SYSTEM
     ═══════════════════════════════ */
-    const pins = { setup:'', confirm:'', send:'', add:'' };
-    const pinLengths = { setup:4, confirm:4, send:6, add:6 };
-    const pinNextPages = { setup:'p-card-pin-confirm', confirm:'p-deposit', send:'page-send-success', add:'page-add-success' };
+    const pins = { setup:'', confirm:'', send:'', add:'', reset:'', resetconfirm:'' };
+    const pinLengths = { setup:4, confirm:4, send:6, add:6, reset:4, resetconfirm:4 };
+    const pinNextPages = { setup:'p-card-pin-confirm', confirm:'p-deposit', send:'page-send-success', add:'page-add-success', reset:'p-reset-pin-confirm', resetconfirm:'page-card' };
 
     function updatePinDots(mode) {
         const dotsEl = document.getElementById('pin-dots-'+mode);
@@ -2766,10 +2823,7 @@
         if(pins[mode].length === max) {
             setTimeout(() => {
                 const next = pinNextPages[mode];
-                if(mode === 'send') {
-                    const amt = state.sendAmount || '20,000';
-                    document.getElementById('add-success-title') && (document.getElementById('add-success-title').textContent = '');
-                }
+                if(mode === 'resetconfirm') showToast('✅ PIN has been reset successfully');
                 pins[mode] = '';
                 updatePinDots(mode);
                 goTo(next);
@@ -2958,8 +3012,8 @@
                 <div class="h-title">${t.title}</div>
                 <div class="h-date">${t.date}</div>
             </div>
-            <div style="display:flex; align-items:center; gap:6px;">
-                <div class="h-amount ${isIncome?'income':'expense'}">${isIncome?'+':'-'} ₩${t.amount.toLocaleString()}</div>
+            <div style="display:flex; align-items:center; gap:6px; margin-left:auto;">
+                <div class="h-amount ${isIncome?'income':'expense'}" style="margin-left:0;">${isIncome?'+':'-'} ₩${t.amount.toLocaleString()}</div>
                 <i class="fas fa-chevron-right" style="color:var(--gray-200); font-size:11px;"></i>
             </div>
         </div>`;
@@ -3001,6 +3055,14 @@
         document.getElementById('txn-detail-method').textContent = t.paymentMethod || 'Nexus';
         document.getElementById('txn-detail-id').textContent = 'TXN-' + String(Date.now()).slice(-8);
         goTo('page-txn-detail');
+    }
+
+    function startResetPin() {
+        pins.reset = '';
+        pins.resetconfirm = '';
+        updatePinDots('reset');
+        updatePinDots('resetconfirm');
+        goTo('p-reset-pin');
     }
 
     /* Card freeze toggle */
