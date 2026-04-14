@@ -6,8 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Nexus - Money, Borderless.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -42,7 +41,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--gray-700);
             height: 100%;
@@ -140,7 +139,7 @@
             padding: 18px 24px;
             border: none;
             border-radius: var(--radius-xl);
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Pretendard', sans-serif;
             font-size: 17px;
             font-weight: 700;
             cursor: pointer;
@@ -188,7 +187,7 @@
             border-bottom: 1.5px solid var(--green-light);
             background: transparent;
             padding: 10px 0;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Pretendard', sans-serif;
             font-size: 15px;
             color: var(--gray-500);
             outline: none;
@@ -237,7 +236,7 @@
             color: var(--black);
             letter-spacing: -1px;
             margin-bottom: 40px;
-            font-family: 'DM Mono', monospace;
+            font-family: 'Pretendard', sans-serif;
         }
         .splash-bottom {
             margin-top: auto;
@@ -257,7 +256,7 @@
             flex: 1;
             border: none;
             background: transparent;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Pretendard', sans-serif;
             font-size: 15px;
             color: var(--gray-500);
             outline: none;
@@ -333,7 +332,7 @@
             border: none;
             border-radius: 10px;
             padding: 12px 32px;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Pretendard', sans-serif;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
@@ -586,7 +585,7 @@
             font-size: 13px;
             font-weight: 900;
             color: rgba(255,255,255,0.9);
-            font-family: 'DM Mono', monospace;
+            font-family: 'Pretendard', sans-serif;
         }
         .card-thumb-label {
             display: flex;
@@ -877,7 +876,7 @@
             font-weight: 900;
             color: rgba(255,255,255,0.9);
             letter-spacing: -0.5px;
-            font-family: 'DM Mono', monospace;
+            font-family: 'Pretendard', sans-serif;
             position: absolute;
             bottom: 24px;
             right: 28px;
@@ -995,7 +994,7 @@
             border: none;
             border-radius: var(--radius-md);
             padding: 14px 16px;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Pretendard', sans-serif;
             font-size: 14px;
             outline: none;
             display: flex;
@@ -1016,7 +1015,7 @@
             flex: 1;
             border: none;
             background: transparent;
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Pretendard', sans-serif;
             font-size: 14px;
             outline: none;
             color: var(--gray-500);
@@ -1059,7 +1058,7 @@
             font-size: 8px;
             font-weight: 900;
             color: white;
-            font-family: 'DM Mono', monospace;
+            font-family: 'Pretendard', sans-serif;
         }
         .r-info .r-name {
             font-size: 15px;
@@ -1100,7 +1099,7 @@
         .send-tab .tab-brand {
             font-size: 10px;
             font-weight: 900;
-            font-family: 'DM Mono', monospace;
+            font-family: 'Pretendard', sans-serif;
             letter-spacing: -0.3px;
         }
 
@@ -1246,7 +1245,7 @@
             <div class="splash-headline">Money,<br>Borderless.</div>
         </div>
         <div class="splash-bottom">
-            <div class="splash-logo">nexus</div>
+            <img src="nexus_black_bgremoved.png" alt="nexus" style="height:36px; object-fit:contain; margin-bottom:28px;">
             <button class="btn btn-black" onclick="goTo('p-register')">
                 <i class="fab fa-apple"></i> Start with Apple
             </button>
@@ -1261,6 +1260,7 @@
          PAGE 2: REGISTER
     ══════════════════════════════════════════ -->
     <section class="page" id="p-register">
+    <div class="back-btn" onclick="goTo('p-splash')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Welcome to<br>Nexus.</div>
             <div style="height:32px;"></div>
@@ -1290,6 +1290,7 @@
          PAGE 3: OTP
     ══════════════════════════════════════════ -->
     <section class="page" id="p-otp">
+    <div class="back-btn" onclick="goTo('p-register')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Welcome to<br>Nexus.</div>
             <div style="height:24px;"></div>
@@ -1315,6 +1316,7 @@
          PAGE 4: PASSPORT SCAN
     ══════════════════════════════════════════ -->
     <section class="page" id="p-passport-scan">
+    <div class="back-btn" onclick="goTo('p-otp')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Passport<br>Verification</div>
             <div style="height:16px;"></div>
@@ -1339,6 +1341,7 @@
 
     <!-- PAGE: Passport Loading -->
     <section class="page" id="p-passport-loading">
+    <div class="back-btn" onclick="goTo('p-passport-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap" style="justify-content:flex-start;">
             <div class="ob-title green">Currently<br>in process...</div>
             <div style="height:8px;"></div>
@@ -1349,6 +1352,7 @@
 
     <!-- PAGE: Passport Success -->
     <section class="page" id="p-passport-success">
+    <div class="back-btn" onclick="goTo('p-passport-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Passport<br>Verification</div>
             <div style="height:8px;"></div>
@@ -1362,6 +1366,7 @@
 
     <!-- PAGE: Passport Error -->
     <section class="page" id="p-passport-error">
+    <div class="back-btn" onclick="goTo('p-passport-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title red">Passport<br>Verification Error</div>
             <div style="height:8px;"></div>
@@ -1376,6 +1381,7 @@
          PAGE 8: PERSONAL INFO CONFIRM
     ══════════════════════════════════════════ -->
     <section class="page" id="p-personal-confirm">
+    <div class="back-btn" onclick="goTo('p-passport-success')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Personal Information<br>Confirmation</div>
             <div style="height:16px;"></div>
@@ -1411,6 +1417,7 @@
 
     <!-- PAGE: Info Loading -->
     <section class="page" id="p-info-loading">
+    <div class="back-btn" onclick="goTo('p-personal-confirm')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Currently<br>in process...</div>
             <div style="height:8px;"></div>
@@ -1421,6 +1428,7 @@
 
     <!-- PAGE: Info Error -->
     <section class="page" id="p-info-error">
+    <div class="back-btn" onclick="goTo('p-personal-confirm')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title red">Personal Information<br>Failed to verify.</div>
             <div style="height:8px;"></div>
@@ -1435,6 +1443,7 @@
          PAGE 10: FACE SCAN
     ══════════════════════════════════════════ -->
     <section class="page" id="p-face-scan">
+    <div class="back-btn" onclick="goTo('p-personal-confirm')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Face Scan<br>Verification</div>
             <div style="height:16px;"></div>
@@ -1466,6 +1475,7 @@
 
     <!-- PAGE: Face Loading -->
     <section class="page" id="p-face-loading">
+    <div class="back-btn" onclick="goTo('p-face-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Currently<br>in process...</div>
             <div style="height:8px;"></div>
@@ -1476,6 +1486,7 @@
 
     <!-- PAGE: Face Success -->
     <section class="page" id="p-face-success">
+    <div class="back-btn" onclick="goTo('p-face-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Face Scan<br>Verification</div>
             <div style="height:8px;"></div>
@@ -1489,6 +1500,7 @@
 
     <!-- PAGE: Face Error -->
     <section class="page" id="p-face-error">
+    <div class="back-btn" onclick="goTo('p-face-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title red">Face Scan<br>Error</div>
             <div style="height:8px;"></div>
@@ -1503,6 +1515,7 @@
          PAGE 15: KOREAN BANK TERMS
     ══════════════════════════════════════════ -->
     <section class="page" id="p-bank-terms">
+    <div class="back-btn" onclick="goTo('p-face-success')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Getting your own<br>Korean Bank Account.</div>
             <div style="height:20px;"></div>
@@ -1550,6 +1563,7 @@
          PAGE 16: RESIDENCY SELECTOR
     ══════════════════════════════════════════ -->
     <section class="page" id="p-residency">
+    <div class="back-btn" onclick="goTo('p-bank-terms')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Tell us about<br>your stay in Korea.</div>
             <div style="height:8px;"></div>
@@ -1604,6 +1618,7 @@
          PAGE 20: STUDENT DOC LIST
     ══════════════════════════════════════════ -->
     <section class="page" id="p-docs-student">
+    <div class="back-btn" onclick="goTo('p-residency')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Student (D-2, D-4)<br>Residency Verification</div>
             <div style="height:8px;"></div>
@@ -1648,6 +1663,7 @@
 
     <!-- PAGE: Residency Scan -->
     <section class="page" id="p-res-scan">
+    <div class="back-btn" onclick="goTo('p-docs-student')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-wrap" style="padding:0;">
                 <div class="ob-title green" style="margin-bottom:4px;">Residency<br>Verification</div>
@@ -1674,6 +1690,7 @@
 
     <!-- PAGE: Residency Loading -->
     <section class="page" id="p-res-loading">
+    <div class="back-btn" onclick="goTo('p-res-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Currently<br>in process...</div>
             <div style="height:8px;"></div>
@@ -1684,6 +1701,7 @@
 
     <!-- PAGE: Residency Success -->
     <section class="page" id="p-res-success">
+    <div class="back-btn" onclick="goTo('p-res-scan')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Residency<br>Verification</div>
             <div style="height:8px;"></div>
@@ -1699,6 +1717,7 @@
          PAGE 27: REVIEW SCANNED INFO
     ══════════════════════════════════════════ -->
     <section class="page" id="p-info-review">
+    <div class="back-btn" onclick="goTo('p-res-success')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Review your<br>scanned information</div>
             <div style="height:8px;"></div>
@@ -1743,6 +1762,7 @@
          PAGE 28: PURPOSE OF ACCOUNT
     ══════════════════════════════════════════ -->
     <section class="page" id="p-purpose">
+    <div class="back-btn" onclick="goTo('p-info-review')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Purpose of Account</div>
             <div style="height:8px;"></div>
@@ -1763,6 +1783,7 @@
          PAGE 29: CHOOSE NEXUS CARD
     ══════════════════════════════════════════ -->
     <section class="page" id="p-card-choose">
+    <div class="back-btn" onclick="goTo('p-purpose')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Choose your<br>Nexus Card</div>
             <div style="height:8px;"></div>
@@ -1809,6 +1830,7 @@
          PAGE 30-31: CARD PIN
     ══════════════════════════════════════════ -->
     <section class="page" id="p-card-pin">
+    <div class="back-btn" onclick="goTo('p-card-choose')"><i class="fas fa-chevron-left"></i></div>
         <div class="pin-wrap">
             <div class="pin-title">Select Card PIN</div>
             <div style="font-size:14px; color:var(--gray-400); margin-bottom:36px; margin-top:-20px;">Create a 4-digit PIN for online and offline payments and ATM withdrawals.</div>
@@ -1836,6 +1858,7 @@
     </section>
 
     <section class="page" id="p-card-pin-confirm">
+    <div class="back-btn" onclick="goTo('p-card-pin')"><i class="fas fa-chevron-left"></i></div>
         <div class="pin-wrap">
             <div class="pin-title">Re-Enter Card PIN</div>
             <div style="font-size:14px; color:var(--gray-400); margin-bottom:36px; margin-top:-20px;">Enter your 4-digit PIN for online and offline payments and ATM withdrawals.</div>
@@ -1866,6 +1889,7 @@
          PAGE 32: DEPOSIT
     ══════════════════════════════════════════ -->
     <section class="page" id="p-deposit">
+    <div class="back-btn" onclick="goTo('p-card-pin-confirm')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Add deposit and money<br>to your balance</div>
             <div style="height:8px;"></div>
@@ -1918,6 +1942,7 @@
          PAGE 33: ALL SET
     ══════════════════════════════════════════ -->
     <section class="page" id="p-all-set">
+    <div class="back-btn" onclick="goTo('p-deposit')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green">Everything is set!</div>
             <div style="height:8px;"></div>
@@ -1963,7 +1988,7 @@
                 <!-- Card image strip at top -->
                 <div style="height:90px; background:linear-gradient(135deg,#8ecfd4 0%,#b8d9c8 40%,#e8c99a 70%,#d4956a 100%); position:relative; overflow:hidden;">
                     <div style="position:absolute; inset:0; display:flex; align-items:center; padding:10px 16px;">
-                        <div style="font-size:16px; font-weight:900; color:rgba(255,255,255,0.9); font-family:'DM Mono',monospace; letter-spacing:-0.5px; background:rgba(0,0,0,0.18); padding:4px 10px; border-radius:8px;">nexus</div>
+                        <div style="font-size:16px; font-weight:900; color:rgba(255,255,255,0.9); font-family:'Pretendard', sans-serif; letter-spacing:-0.5px; background:rgba(0,0,0,0.18); padding:4px 10px; border-radius:8px;">nexus</div>
                     </div>
                     <!-- Decorative art elements -->
                     <div style="position:absolute; right:0; top:0; bottom:0; width:60%; background:linear-gradient(90deg,transparent,rgba(180,120,60,0.15)); pointer-events:none;"></div>
@@ -1978,10 +2003,10 @@
                     </div>
                     <div style="font-size:30px; font-weight:900; color:#fff; letter-spacing:-1px; margin-bottom:14px;" id="balance-display">$123,456.30</div>
                     <div style="display:flex; gap:10px;">
-                        <button onclick="goTo('page-add-money')" style="flex:1; background:rgba(255,255,255,0.12); border:none; border-radius:30px; padding:10px; color:rgba(255,255,255,0.85); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; transition:background 0.15s;">
+                        <button onclick="goTo('page-add-money')" style="flex:1; background:rgba(255,255,255,0.12); border:none; border-radius:30px; padding:10px; color:rgba(255,255,255,0.85); font-family:'Pretendard',sans-serif; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; transition:background 0.15s;">
                             <i class="fas fa-arrow-down-left" style="font-size:11px;"></i> Add money
                         </button>
-                        <button onclick="goTo('page-send')" style="flex:1; background:rgba(255,255,255,0.12); border:none; border-radius:30px; padding:10px; color:rgba(255,255,255,0.85); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; transition:background 0.15s;">
+                        <button onclick="goTo('page-send')" style="flex:1; background:rgba(255,255,255,0.12); border:none; border-radius:30px; padding:10px; color:rgba(255,255,255,0.85); font-family:'Pretendard',sans-serif; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; transition:background 0.15s;">
                             <i class="fas fa-arrow-up-right" style="font-size:11px;"></i> Send money
                         </button>
                     </div>
@@ -2038,7 +2063,7 @@
                         <span style="font-style:italic;">"What kind of room has no doors or windows?"</span>
                     </div>
                 </div>
-                <button onclick="showToast('Quiz coming soon! 🎯')" style="width:52px; height:52px; background:var(--green-primary); border:none; border-radius:14px; color:white; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:900; cursor:pointer; flex-shrink:0; letter-spacing:-0.5px;">GO</button>
+                <button onclick="showToast('Quiz coming soon! 🎯')" style="width:52px; height:52px; background:var(--green-primary); border:none; border-radius:14px; color:white; font-family:'Pretendard',sans-serif; font-size:13px; font-weight:900; cursor:pointer; flex-shrink:0; letter-spacing:-0.5px;">GO</button>
             </div>
         </div>
 
@@ -2075,6 +2100,7 @@
          HISTORY PAGE
     ══════════════════════════════════════════ -->
     <section class="page" id="page-history">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="page-pad">
             <div style="font-size:26px; font-weight:900; color:var(--black); letter-spacing:-0.5px; margin-bottom:24px;">Transactions</div>
             <div id="full-history"></div>
@@ -2085,6 +2111,7 @@
          CARD PAGE
     ══════════════════════════════════════════ -->
     <section class="page" id="page-card">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="page-pad">
             <div style="font-size:26px; font-weight:900; color:var(--black); letter-spacing:-0.5px; margin-bottom:24px;">My Card</div>
             <div class="nexus-card" style="height:200px; margin-bottom:24px;">
@@ -2114,6 +2141,7 @@
          MENU PAGE
     ══════════════════════════════════════════ -->
     <section class="page" id="page-menu">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="page-pad">
             <div style="font-size:26px; font-weight:900; color:var(--black); letter-spacing:-0.5px; margin-bottom:24px;">Menu</div>
             <div style="display:flex; flex-direction:column; gap:2px;">
@@ -2131,6 +2159,7 @@
          SEND MONEY
     ══════════════════════════════════════════ -->
     <section class="page" id="page-send">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap" style="padding-top:60px;">
             <div class="ob-title green" style="font-size:28px;">Send money</div>
             <div style="height:16px;"></div>
@@ -2153,6 +2182,7 @@
 
     <!-- AMOUNT SCREEN -->
     <section class="page" id="page-amount">
+    <div class="back-btn" onclick="goTo('page-send')"><i class="fas fa-chevron-left"></i></div>
         <div class="amount-wrap">
             <div class="amount-title" id="amount-title">Sending to<br>Bailey</div>
             <div class="amount-display-box">
@@ -2181,6 +2211,7 @@
 
     <!-- SEND PIN -->
     <section class="page" id="page-send-pin">
+    <div class="back-btn" onclick="goTo('page-amount')"><i class="fas fa-chevron-left"></i></div>
         <div class="pin-wrap">
             <div class="pin-title" id="send-pin-title">Enter PIN<br>to send Bailey<br>20,000₩</div>
             <div class="pin-dots" id="pin-dots-send">
@@ -2211,6 +2242,7 @@
 
     <!-- SEND SUCCESS -->
     <section class="page" id="page-send-success">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green" id="send-success-title">Sent 20,000₩<br>to Bailey.</div>
             <div style="flex:1;"></div>
@@ -2230,6 +2262,7 @@
          ADD MONEY
     ══════════════════════════════════════════ -->
     <section class="page" id="page-add-money">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap" style="padding-top:60px;">
             <div class="ob-title green">Add money<br>to your balance</div>
             <div style="height:8px;"></div>
@@ -2256,6 +2289,7 @@
 
     <!-- ADD AMOUNT KEYPAD -->
     <section class="page" id="page-add-amount">
+    <div class="back-btn" onclick="goTo('page-add-money')"><i class="fas fa-chevron-left"></i></div>
         <div class="amount-wrap">
             <div class="amount-title">How much would you<br>add money here?</div>
             <div class="amount-display-box">
@@ -2284,6 +2318,7 @@
 
     <!-- ADD PIN -->
     <section class="page" id="page-add-pin">
+    <div class="back-btn" onclick="goTo('page-add-amount')"><i class="fas fa-chevron-left"></i></div>
         <div class="pin-wrap">
             <div class="pin-title" id="add-pin-title">Enter PIN<br>to add 20,000₩</div>
             <div class="pin-dots" id="pin-dots-add">
@@ -2314,6 +2349,7 @@
 
     <!-- ADD SUCCESS -->
     <section class="page" id="page-add-success">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap">
             <div class="ob-title green" id="add-success-title">Added 20,000₩.</div>
             <div style="height:8px;"></div>
@@ -2333,6 +2369,7 @@
 
     <!-- ADD CARD FORM -->
     <section class="page" id="page-add-card">
+    <div class="back-btn" onclick="goTo('page-add-money')"><i class="fas fa-chevron-left"></i></div>
         <div class="ob-wrap" style="padding-top:60px;">
             <div class="ob-title green">Add card<br>to your Nexus Account</div>
             <div style="height:8px;"></div>
@@ -2366,6 +2403,10 @@
     </section>
 
 </div>
+
+<!-- DEV SKIP ZONE: 우상단 5회 탭 → 홈으로 스킵 -->
+<div id="dev-skip-zone" style="position:fixed; top:0; right:0; width:80px; height:80px; z-index:9999; -webkit-tap-highlight-color:transparent;" onclick="devSkipTap()"></div>
+<div id="dev-skip-toast" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.85); color:white; padding:14px 24px; border-radius:14px; font-size:15px; font-weight:700; display:none; z-index:9999; text-align:center; backdrop-filter:blur(8px);">⚡ Dev Skip<br><span style="font-size:12px; opacity:0.7;">홈 화면으로 이동</span></div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav hidden" id="bottom-nav">
@@ -2770,6 +2811,30 @@
         });
         observer.observe(document.getElementById('p-otp'), { attributes:true, attributeFilter:['class'] });
     });
+    /* ═══════════════════════════════
+       DEV SKIP (우상단 5탭)
+    ═══════════════════════════════ */
+    let devTapCount = 0;
+    let devTapTimer = null;
+    function devSkipTap() {
+        devTapCount++;
+        clearTimeout(devTapTimer);
+        if (devTapCount >= 5) {
+            devTapCount = 0;
+            const toast = document.getElementById('dev-skip-toast');
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 1200);
+            setTimeout(() => {
+                renderHomeHistory();
+                renderFullHistory();
+                renderRecipients();
+                goHome();
+            }, 600);
+        } else {
+            devTapTimer = setTimeout(() => { devTapCount = 0; }, 1500);
+        }
+    }
+
 </script>
 </body>
 </html>
