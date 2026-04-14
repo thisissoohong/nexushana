@@ -2401,7 +2401,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     /* ═══════════════════════════════
        STATE
     ═══════════════════════════════ */
@@ -2763,4 +2763,13 @@
         renderHomeHistory();
         renderFullHistory();
         renderRecipients();
-        startOtpTimer(
+        startOtpTimer();
+        // Watch p-otp page show to restart timer
+        const observer = new MutationObserver(() => {
+            if(document.getElementById('p-otp').classList.contains('active')) startOtpTimer();
+        });
+        observer.observe(document.getElementById('p-otp'), { attributes:true, attributeFilter:['class'] });
+    });
+</script>
+</body>
+</html>
