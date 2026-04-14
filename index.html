@@ -72,7 +72,7 @@
         .page {
             display: none;
             flex-direction: column;
-            padding: 0 0 80px 0;
+            padding: 0 0 90px 0;
             animation: fadeSlide 0.3s ease;
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -95,13 +95,13 @@
 
         /* ───── ONBOARDING SHARED ───── */
         .ob-wrap {
-            padding: 36px 24px 16px;
+            padding: 28px 24px 12px;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
         .ob-title {
-            font-size: 24px;
+            font-size: 30px;
             font-weight: 700;
             line-height: 1.15;
             color: var(--black);
@@ -111,27 +111,32 @@
         .ob-title.green { color: var(--green-primary); }
         .ob-title.red   { color: var(--red-error); }
         .ob-subtitle {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 400;
             color: var(--gray-700);
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 6px;
         }
         .ob-body {
-            font-size: 13px;
+            font-size: 10px;
+            font-weight: 400;
             color: var(--gray-500);
-            line-height: 1.5;
-            margin-bottom: 16px;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
         /* ───── STICKY BOTTOM ───── */
         .bottom-action {
-            position: sticky;
+            position: fixed;
             bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 430px;
+            margin: 0 auto;
             background: var(--white);
-            padding: 12px 24px max(env(safe-area-inset-bottom, 0px), 12px);
-            border-top: 1px solid rgba(0,0,0,0.04);
-            margin-top: auto;
+            padding: 12px 24px 20px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            z-index: 50;
         }
 
         /* ───── BUTTONS ───── */
@@ -141,7 +146,7 @@
             border: none;
             border-radius: var(--radius-xl);
             font-family: 'Pretendard', sans-serif;
-            font-size: 17px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
@@ -174,9 +179,9 @@
         .btn + .btn { margin-top: 12px; }
 
         /* ───── INPUTS ───── */
-        .input-block { margin-bottom: 24px; }
+        .input-block { margin-bottom: 14px; }
         .input-label {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--gray-700);
             margin-bottom: 8px;
@@ -187,9 +192,9 @@
             border: none;
             border-bottom: 1.5px solid var(--green-light);
             background: transparent;
-            padding: 10px 0;
+            padding: 8px 0;
             font-family: 'Pretendard', sans-serif;
-            font-size: 15px;
+            font-size: 12px;
             color: var(--gray-500);
             outline: none;
             transition: border-color 0.2s;
@@ -277,7 +282,7 @@
             align-items: center;
         }
         .otp-link {
-            font-size: 13px;
+            font-size: 10px;
             color: var(--gray-500);
             text-decoration: underline;
             cursor: pointer;
@@ -327,7 +332,7 @@
             0%   { transform: scale(1); opacity: 0.8; }
             100% { transform: scale(1.4); opacity: 0; }
         }
-        .scan-hint { font-size: 13px; color: var(--gray-400); text-align: center; }
+        .scan-hint { font-size: 10px; color: var(--gray-400); text-align: center; }
         .scan-cancel-btn {
             background: var(--gray-100);
             border: none;
@@ -339,8 +344,8 @@
             cursor: pointer;
             width: 100%;
         }
-        .scan-powered { font-size: 11px; color: var(--gray-400); text-align: center; margin-top: 4px; }
-        .scan-security { font-size: 11px; color: var(--gray-400); text-align: center; margin-top: 8px; }
+        .scan-powered { font-size: 10px; color: var(--gray-400); text-align: center; margin-top: 4px; }
+        .scan-security { font-size: 10px; color: var(--gray-400); text-align: center; margin-top: 8px; }
 
         /* ───── SUCCESS / ERROR STATE ───── */
         .status-icon {
@@ -375,7 +380,7 @@
             margin-bottom: 8px;
         }
         .confirm-value {
-            font-size: 15px;
+            font-size: 12px;
             color: var(--green-primary);
             border-bottom: 1.5px solid var(--green-light);
             padding: 10px 0;
@@ -429,19 +434,19 @@
         }
         .res-icon img, .res-icon svg { width: 100%; height: 100%; }
         .res-text .res-title {
-            font-size: 15px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--gray-700);
             margin-bottom: 3px;
         }
         .res-text .res-desc {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--gray-400);
             line-height: 1.4;
         }
         .res-option.selected .res-text .res-title { color: var(--gray-900); }
         .res-footer {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--gray-400);
             text-align: center;
             line-height: 1.6;
@@ -470,12 +475,12 @@
         }
         .doc-icon svg { width: 100%; height: 100%; }
         .doc-info .doc-title {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--gray-700);
         }
         .doc-info .doc-desc {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--gray-400);
             line-height: 1.5;
             margin-top: 2px;
@@ -515,13 +520,13 @@
             display: block;
         }
         .term-text .term-title {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--gray-700);
             line-height: 1.4;
         }
         .term-text .term-desc {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--gray-400);
             margin-top: 3px;
             line-height: 1.5;
@@ -530,8 +535,8 @@
         /* ───── PURPOSE SELECTOR ───── */
         .purpose-list { display: flex; flex-direction: column; gap: 0; margin-top: 24px; }
         .purpose-item {
-            padding: 20px 4px;
-            font-size: 17px;
+            padding: 14px 4px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--gray-300);
             border-bottom: 1px solid var(--gray-100);
@@ -2158,33 +2163,33 @@
                         <div style="position:absolute; left:3px; top:3px; width:18px; height:18px; background:white; border-radius:50%; transition:left 0.2s; box-shadow:0 1px 3px rgba(0,0,0,0.2);" id="freeze-knob"></div>
                     </div>
                 </div>
-                <div onclick="showToast('카드가 일시정지 되었습니다')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
+                <div onclick="showToast('Card has been suspended')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
                     <div style="width:36px; height:36px; background:#FFF3E0; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
                         <i class="fas fa-pause-circle" style="color:#E65100; font-size:15px;"></i>
                     </div>
                     <div style="flex:1;">
-                        <div style="font-size:14px; font-weight:700;">일시정지</div>
-                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">카드 사용을 일시적으로 중단합니다</div>
+                        <div style="font-size:14px; font-weight:700;">Suspend Card</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">Temporarily suspend card usage</div>
                     </div>
                     <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
                 </div>
-                <div onclick="showToast('분실 신고가 접수되었습니다. 고객센터에서 확인 예정입니다.')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
+                <div onclick="showToast('Lost card report submitted. Our team will contact you.')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
                     <div style="width:36px; height:36px; background:#FCE4EC; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
                         <i class="fas fa-exclamation-triangle" style="color:#C62828; font-size:15px;"></i>
                     </div>
                     <div style="flex:1;">
-                        <div style="font-size:14px; font-weight:700; color:var(--red-error);">카드 분실 신고</div>
-                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">즉시 카드를 차단하고 신고합니다</div>
+                        <div style="font-size:14px; font-weight:700; color:var(--red-error);">Report Lost Card</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">Block card immediately and file a report</div>
                     </div>
                     <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
                 </div>
-                <div onclick="showToast('재발급 신청이 접수되었습니다. 3-5일 내 배송 예정입니다.')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
+                <div onclick="showToast('Reissue request submitted. Delivery in 3-5 business days.')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
                     <div style="width:36px; height:36px; background:var(--green-soft); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
                         <i class="fas fa-sync-alt" style="color:var(--green-primary); font-size:15px;"></i>
                     </div>
                     <div style="flex:1;">
-                        <div style="font-size:14px; font-weight:700;">카드 재발급 신청</div>
-                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">새 카드를 발급받습니다</div>
+                        <div style="font-size:14px; font-weight:700;">Request Card Reissue</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">Apply for a new replacement card</div>
                     </div>
                     <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
                 </div>
@@ -2193,8 +2198,8 @@
                         <i class="fas fa-key" style="color:#4527A0; font-size:15px;"></i>
                     </div>
                     <div style="flex:1;">
-                        <div style="font-size:14px; font-weight:700;">비밀번호 재설정</div>
-                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">카드 PIN을 변경합니다</div>
+                        <div style="font-size:14px; font-weight:700;">Reset PIN</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">Change your card PIN</div>
                     </div>
                     <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
                 </div>
@@ -2220,7 +2225,7 @@
             <div style="background:var(--gray-50); border-radius:var(--radius-md); overflow:hidden;">
                 <div style="padding:14px 16px; border-bottom:1px solid var(--gray-100);">
                     <div style="font-size:13px; font-weight:700; color:var(--gray-400); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.5px;">Visa Details</div>
-                    <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="display:flex; flex-direction:column; gap:16px;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
                             <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Visa Issue No.</span>
                             <span style="font-size:13px; font-weight:700; color:var(--gray-900);">AD092831</span>
@@ -2333,7 +2338,7 @@
                     <i class="fas fa-university" style="font-size:16px; margin-bottom:4px;"></i><br>Send to<br>Korean Bank Account
                 </div>
                 <div class="send-tab active">
-                    <div class="tab-brand">nexus</div>
+                    <img src="nexus_white_bgremoved.png" alt="nexus" style="height:14px; object-fit:contain; margin-bottom:3px; display:block; margin-left:auto; margin-right:auto;">
                     Send to<br>Nexus Friend
                 </div>
             </div>
