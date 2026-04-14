@@ -95,14 +95,14 @@
 
         /* ───── ONBOARDING SHARED ───── */
         .ob-wrap {
-            padding: 56px 28px 32px;
+            padding: 36px 24px 16px;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
         .ob-title {
-            font-size: 34px;
-            font-weight: 800;
+            font-size: 24px;
+            font-weight: 700;
             line-height: 1.15;
             color: var(--black);
             margin-bottom: 10px;
@@ -118,10 +118,10 @@
             margin-bottom: 6px;
         }
         .ob-body {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray-500);
-            line-height: 1.6;
-            margin-bottom: 30px;
+            line-height: 1.5;
+            margin-bottom: 16px;
         }
 
         /* ───── STICKY BOTTOM ───── */
@@ -129,14 +129,15 @@
             position: sticky;
             bottom: 0;
             background: var(--white);
-            padding: 16px 28px 32px;
+            padding: 12px 24px max(env(safe-area-inset-bottom, 0px), 12px);
             border-top: 1px solid rgba(0,0,0,0.04);
+            margin-top: auto;
         }
 
         /* ───── BUTTONS ───── */
         .btn {
             width: 100%;
-            padding: 18px 24px;
+            padding: 15px 24px;
             border: none;
             border-radius: var(--radius-xl);
             font-family: 'Pretendard', sans-serif;
@@ -658,8 +659,8 @@
             padding: 48px 28px 24px;
         }
         .pin-title {
-            font-size: 28px;
-            font-weight: 800;
+            font-size: 22px;
+            font-weight: 700;
             color: var(--green-primary);
             line-height: 1.2;
             margin-bottom: 36px;
@@ -783,8 +784,8 @@
             padding: 40px 28px 0;
         }
         .amount-title {
-            font-size: 30px;
-            font-weight: 800;
+            font-size: 22px;
+            font-weight: 700;
             color: var(--green-primary);
             line-height: 1.2;
             letter-spacing: -0.5px;
@@ -2001,7 +2002,7 @@
                         <span style="font-size:13px; color:rgba(255,255,255,0.55); font-weight:500;">My balance</span>
                         <i class="fas fa-eye" style="color:rgba(255,255,255,0.35); font-size:11px;"></i>
                     </div>
-                    <div style="font-size:30px; font-weight:900; color:#fff; letter-spacing:-1px; margin-bottom:14px;" id="balance-display">$123,456.30</div>
+                    <div style="font-size:30px; font-weight:900; color:#fff; letter-spacing:-1px; margin-bottom:14px;" id="balance-display">₩300,000</div>
                     <div style="display:flex; gap:10px;">
                         <button onclick="goTo('page-add-money')" style="flex:1; background:rgba(255,255,255,0.12); border:none; border-radius:30px; padding:10px; color:rgba(255,255,255,0.85); font-family:'Pretendard',sans-serif; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; transition:background 0.15s;">
                             <i class="fas fa-arrow-down-left" style="font-size:11px;"></i> Add money
@@ -2074,7 +2075,7 @@
                 <span style="font-size:16px; font-weight:800; color:var(--black);">Quick Actions</span>
             </div>
             <div style="display:flex; gap:12px; overflow-x:auto; padding-bottom:4px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
-                <div onclick="showToast('Visa Management coming soon')" style="flex-shrink:0; width:150px; height:150px; background:#FDDCB5; border-radius:20px; padding:16px; cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+                <div onclick="goTo('page-visa')" style="flex-shrink:0; width:150px; height:150px; background:#FDDCB5; border-radius:20px; padding:16px; cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
                     <div style="font-size:14px; font-weight:800; color:#2D1A00; line-height:1.3;">Visa<br>Management</div>
                     <div style="text-align:right;">
                         <svg width="52" height="52" viewBox="0 0 52 52" fill="none"><rect x="8" y="6" width="36" height="40" rx="4" stroke="#2D1A00" stroke-width="2"/><rect x="14" y="14" width="24" height="3" rx="1.5" fill="#2D1A00"/><rect x="14" y="20" width="18" height="3" rx="1.5" fill="#2D1A00"/><rect x="14" y="26" width="21" height="3" rx="1.5" fill="#2D1A00"/><rect x="14" y="32" width="14" height="3" rx="1.5" fill="#2D1A00"/><rect x="6" y="36" width="40" height="12" rx="3" fill="#2D1A00"/><rect x="10" y="39" width="32" height="2" rx="1" fill="#FDDCB5"/><rect x="10" y="43" width="20" height="2" rx="1" fill="#FDDCB5"/></svg>
@@ -2102,7 +2103,13 @@
     <section class="page" id="page-history">
     <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="page-pad">
-            <div style="font-size:26px; font-weight:900; color:var(--black); letter-spacing:-0.5px; margin-bottom:24px;">Transactions</div>
+            <div style="font-size:20px; font-weight:700; color:var(--black); margin-bottom:14px;">Transactions</div>
+            <!-- 필터 -->
+            <div style="display:flex; gap:8px; margin-bottom:14px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px;">
+                <div id="hf-all" onclick="historyFilter('all')" style="flex-shrink:0; padding:6px 14px; border-radius:20px; font-size:12px; font-weight:700; background:var(--green-primary); color:white; cursor:pointer;">All</div>
+                <div id="hf-income" onclick="historyFilter('income')" style="flex-shrink:0; padding:6px 14px; border-radius:20px; font-size:12px; font-weight:700; background:var(--gray-100); color:var(--gray-500); cursor:pointer;">Incoming</div>
+                <div id="hf-expense" onclick="historyFilter('expense')" style="flex-shrink:0; padding:6px 14px; border-radius:20px; font-size:12px; font-weight:700; background:var(--gray-100); color:var(--gray-500); cursor:pointer;">Outgoing</div>
+            </div>
             <div id="full-history"></div>
         </div>
     </section>
@@ -2113,27 +2120,180 @@
     <section class="page" id="page-card">
     <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="page-pad">
-            <div style="font-size:26px; font-weight:900; color:var(--black); letter-spacing:-0.5px; margin-bottom:24px;">My Card</div>
-            <div class="nexus-card" style="height:200px; margin-bottom:24px;">
-                <div style="font-size:22px; font-weight:800; color:rgba(255,255,255,0.5); letter-spacing:4px; margin-bottom:12px;">**** **** **** 1234</div>
+            <div style="font-size:20px; font-weight:700; color:var(--black); margin-bottom:16px;">My Card</div>
+            <!-- 카드 -->
+            <div class="nexus-card" style="height:170px; margin-bottom:16px;">
+                <div style="font-size:18px; font-weight:700; color:rgba(255,255,255,0.45); letter-spacing:4px; margin-bottom:10px;">**** **** **** 1234</div>
                 <div style="display:flex; justify-content:space-between; align-items:flex-end;">
                     <div>
-                        <div style="font-size:11px; color:rgba(255,255,255,0.5); font-weight:600; margin-bottom:4px;">CARD HOLDER</div>
-                        <div style="font-size:15px; font-weight:700; color:white;">JOHN NEXENDO</div>
+                        <div style="font-size:10px; color:rgba(255,255,255,0.5); font-weight:600; margin-bottom:3px;">CARD HOLDER</div>
+                        <div style="font-size:14px; font-weight:700; color:white;">JOHN NEXENDO</div>
                     </div>
-                    <div class="card-brand" style="position:static; margin:0;">nexus</div>
+                    <div style="font-size:15px; font-weight:900; color:rgba(255,255,255,0.85); font-family:'Pretendard',sans-serif;">nexus</div>
                 </div>
             </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                <div style="background:var(--gray-50); border-radius:var(--radius-md); padding:16px; text-align:center;">
-                    <div style="font-size:12px; color:var(--gray-400); font-weight:600; margin-bottom:4px;">EXPIRY</div>
-                    <div style="font-size:16px; font-weight:800;">04/30</div>
+            <!-- 상태 그리드 -->
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px;">
+                <div style="background:var(--gray-50); border-radius:var(--radius-md); padding:13px; text-align:center;">
+                    <div style="font-size:11px; color:var(--gray-400); font-weight:600; margin-bottom:3px;">EXPIRY</div>
+                    <div style="font-size:15px; font-weight:700;">04/30</div>
                 </div>
-                <div style="background:var(--gray-50); border-radius:var(--radius-md); padding:16px; text-align:center;">
-                    <div style="font-size:12px; color:var(--gray-400); font-weight:600; margin-bottom:4px;">STATUS</div>
-                    <div style="font-size:16px; font-weight:800; color:var(--green-primary);">Active</div>
+                <div style="background:var(--gray-50); border-radius:var(--radius-md); padding:13px; text-align:center;" id="card-status-box">
+                    <div style="font-size:11px; color:var(--gray-400); font-weight:600; margin-bottom:3px;">STATUS</div>
+                    <div style="font-size:15px; font-weight:700; color:var(--green-primary);" id="card-status-text">Active</div>
                 </div>
             </div>
+            <!-- 카드 관리 메뉴 -->
+            <div style="font-size:13px; font-weight:700; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px;">Card Management</div>
+            <div style="display:flex; flex-direction:column; background:var(--gray-50); border-radius:var(--radius-md); overflow:hidden;">
+                <div onclick="toggleCardFreeze()" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
+                    <div style="width:36px; height:36px; background:#E3F2FD; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <i class="fas fa-snowflake" style="color:#1565C0; font-size:15px;"></i>
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-size:14px; font-weight:700;" id="freeze-label">Freeze Card</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">Temporarily block all transactions</div>
+                    </div>
+                    <div id="freeze-toggle" style="width:42px; height:24px; background:var(--gray-200); border-radius:12px; position:relative; transition:background 0.2s;">
+                        <div style="position:absolute; left:3px; top:3px; width:18px; height:18px; background:white; border-radius:50%; transition:left 0.2s; box-shadow:0 1px 3px rgba(0,0,0,0.2);" id="freeze-knob"></div>
+                    </div>
+                </div>
+                <div onclick="showToast('카드가 일시정지 되었습니다')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
+                    <div style="width:36px; height:36px; background:#FFF3E0; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <i class="fas fa-pause-circle" style="color:#E65100; font-size:15px;"></i>
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-size:14px; font-weight:700;">일시정지</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">카드 사용을 일시적으로 중단합니다</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
+                </div>
+                <div onclick="showToast('분실 신고가 접수되었습니다. 고객센터에서 확인 예정입니다.')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
+                    <div style="width:36px; height:36px; background:#FCE4EC; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <i class="fas fa-exclamation-triangle" style="color:#C62828; font-size:15px;"></i>
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-size:14px; font-weight:700; color:var(--red-error);">카드 분실 신고</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">즉시 카드를 차단하고 신고합니다</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
+                </div>
+                <div onclick="showToast('재발급 신청이 접수되었습니다. 3-5일 내 배송 예정입니다.')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; border-bottom:1px solid var(--gray-100); cursor:pointer;">
+                    <div style="width:36px; height:36px; background:var(--green-soft); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <i class="fas fa-sync-alt" style="color:var(--green-primary); font-size:15px;"></i>
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-size:14px; font-weight:700;">카드 재발급 신청</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">새 카드를 발급받습니다</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
+                </div>
+                <div onclick="goTo('p-card-pin')" style="display:flex; align-items:center; gap:14px; padding:15px 16px; cursor:pointer;">
+                    <div style="width:36px; height:36px; background:#EDE7F6; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <i class="fas fa-key" style="color:#4527A0; font-size:15px;"></i>
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-size:14px; font-weight:700;">비밀번호 재설정</div>
+                        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">카드 PIN을 변경합니다</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color:var(--gray-300); font-size:13px;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         VISA PAGE
+    ══════════════════════════════════════════ -->
+    <section class="page" id="page-visa">
+    <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
+        <div class="page-pad">
+            <div style="font-size:20px; font-weight:700; color:var(--black); margin-bottom:16px;">Visa Management</div>
+            <!-- 비자 상태 카드 -->
+            <div style="background:linear-gradient(135deg,var(--green-pale),var(--green-soft)); border-radius:var(--radius-lg); padding:20px; margin-bottom:16px; border:1px solid rgba(40,112,44,0.1);">
+                <div style="font-size:11px; font-weight:700; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Current Status</div>
+                <div style="font-size:26px; font-weight:700; color:var(--green-primary); letter-spacing:-0.5px; margin-bottom:8px;">D-2 Student</div>
+                <div style="display:inline-flex; background:var(--green-soft); color:var(--green-primary); border:1px solid var(--green-primary); border-radius:20px; padding:3px 12px; font-size:12px; font-weight:700; margin-bottom:10px;">Active</div>
+                <div style="font-size:13px; color:var(--gray-700);">Expires on <strong>Feb 05, 2028</strong></div>
+            </div>
+            <!-- 비자 상세 -->
+            <div style="background:var(--gray-50); border-radius:var(--radius-md); overflow:hidden;">
+                <div style="padding:14px 16px; border-bottom:1px solid var(--gray-100);">
+                    <div style="font-size:13px; font-weight:700; color:var(--gray-400); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.5px;">Visa Details</div>
+                    <div style="display:flex; flex-direction:column; gap:10px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Visa Issue No.</span>
+                            <span style="font-size:13px; font-weight:700; color:var(--gray-900);">AD092831</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Reg. No</span>
+                            <span style="font-size:13px; font-weight:700; color:var(--gray-900);">990101-5******</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Type</span>
+                            <span style="font-size:13px; font-weight:700; color:var(--gray-900);">General Student (D-2)</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Issue Date</span>
+                            <span style="font-size:13px; font-weight:700; color:var(--gray-900);">Jan 01, 2026</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Entry Date</span>
+                            <span style="font-size:13px; font-weight:700; color:var(--gray-900);">Feb 05, 2026</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Expire Date</span>
+                            <span style="font-size:13px; font-weight:700; color:var(--green-primary);">Feb 05, 2028</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Stay Period</span>
+                            <span style="font-size:13px; font-weight:700; color:var(--gray-900);">2 Years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         TRANSACTION DETAIL PAGE
+    ══════════════════════════════════════════ -->
+    <section class="page" id="page-txn-detail">
+    <div class="back-btn" onclick="goTo('page-history')"><i class="fas fa-chevron-left"></i></div>
+        <div class="page-pad">
+            <div style="font-size:20px; font-weight:700; color:var(--black); margin-bottom:20px;">Transaction Detail</div>
+            <!-- 아이콘 + 금액 -->
+            <div style="text-align:center; padding:20px 0 24px;">
+                <div id="txn-detail-icon" style="width:60px; height:60px; border-radius:50%; background:var(--gray-100); display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700; margin:0 auto 12px;"></div>
+                <div id="txn-detail-amount" style="font-size:32px; font-weight:700; letter-spacing:-1px; margin-bottom:4px;"></div>
+                <div id="txn-detail-status" style="display:inline-flex; padding:3px 12px; border-radius:20px; font-size:12px; font-weight:700;"></div>
+            </div>
+            <!-- 상세 정보 -->
+            <div style="background:var(--gray-50); border-radius:var(--radius-md); padding:4px 0; margin-bottom:16px;">
+                <div style="display:flex; justify-content:space-between; padding:13px 16px; border-bottom:1px solid var(--gray-100);">
+                    <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Name</span>
+                    <span style="font-size:13px; font-weight:700;" id="txn-detail-title"></span>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding:13px 16px; border-bottom:1px solid var(--gray-100);">
+                    <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Date</span>
+                    <span style="font-size:13px; font-weight:700;" id="txn-detail-date"></span>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding:13px 16px; border-bottom:1px solid var(--gray-100);">
+                    <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Category</span>
+                    <span style="font-size:13px; font-weight:700;" id="txn-detail-category"></span>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding:13px 16px; border-bottom:1px solid var(--gray-100);">
+                    <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Payment Method</span>
+                    <span style="font-size:13px; font-weight:700;" id="txn-detail-method"></span>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding:13px 16px;">
+                    <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Transaction ID</span>
+                    <span style="font-size:11px; font-weight:700; color:var(--gray-400);" id="txn-detail-id"></span>
+                </div>
+            </div>
+            <button class="btn btn-light" onclick="showToast('영수증이 저장되었습니다')">
+                <i class="fas fa-download"></i> Save Receipt
+            </button>
         </div>
     </section>
 
@@ -2143,7 +2303,7 @@
     <section class="page" id="page-menu">
     <div class="back-btn" onclick="goTo('page-home')"><i class="fas fa-chevron-left"></i></div>
         <div class="page-pad">
-            <div style="font-size:26px; font-weight:900; color:var(--black); letter-spacing:-0.5px; margin-bottom:24px;">Menu</div>
+            <div style="font-size:22px; font-weight:700; color:var(--black); letter-spacing:-0.5px; margin-bottom:24px;">Menu</div>
             <div style="display:flex; flex-direction:column; gap:2px;">
                 <div style="padding:16px 12px; font-size:15px; font-weight:600; border-bottom:1px solid var(--gray-100); cursor:pointer; display:flex; justify-content:space-between; align-items:center;" onclick="showToast('Profile settings coming soon')">Profile Settings <i class="fas fa-chevron-right" style="color:var(--gray-300);"></i></div>
                 <div style="padding:16px 12px; font-size:15px; font-weight:600; border-bottom:1px solid var(--gray-100); cursor:pointer; display:flex; justify-content:space-between; align-items:center;" onclick="showToast('Notifications settings coming soon')">Notifications <i class="fas fa-chevron-right" style="color:var(--gray-300);"></i></div>
@@ -2222,7 +2382,6 @@
                 <div class="pin-dot empty"></div>
                 <div class="pin-dot empty"></div>
             </div>
-            <div style="font-size:12px; color:var(--gray-400); text-align:center; margin-top:-30px; margin-bottom:40px;">또는 생체인식</div>
             <div class="num-pad" style="margin-top:auto;">
                 <div class="num-key" onclick="pinInput('send',1)">1</div>
                 <div class="num-key" onclick="pinInput('send',2)">2<div class="num-key-sub">ABC</div></div>
@@ -2329,7 +2488,6 @@
                 <div class="pin-dot empty"></div>
                 <div class="pin-dot empty"></div>
             </div>
-            <div style="font-size:12px; color:var(--gray-400); text-align:center; margin-top:-30px; margin-bottom:40px;">여기에 가상키패드 넣어주세요</div>
             <div class="num-pad" style="margin-top:auto;">
                 <div class="num-key" onclick="pinInput('add',1)">1</div>
                 <div class="num-key" onclick="pinInput('add',2)">2<div class="num-key-sub">ABC</div></div>
@@ -2447,7 +2605,7 @@
        STATE
     ═══════════════════════════════ */
     const state = {
-        balance: 500000,
+        balance: 300000,
         userName: 'John',
         selectedRes: 'student',
         cardPin: '',
@@ -2459,11 +2617,11 @@
         addPinVal: '',
         currentRecipient: '',
         transactions: [
-            { title:'Mathias Bee', date:'29 Jul, 5:00pm', amount:52000, type:'income', icon:'MB', bg:'#FCE4EC', fg:'#C2185B' },
-            { title:'Uber Ride',   date:'24 Jul, 10:50pm', amount:12600, type:'expense', icon:'🚗', bg:'#000', fg:'#fff' },
-            { title:'John Doe',    date:'30 Jun, 5:00am',  amount:145000, type:'income', icon:'JD', bg:'#E3F2FD', fg:'#1565C0' },
-            { title:'Amazon',      date:'26 Jun, 10:30am', amount:42000, type:'expense', icon:'📦', bg:'#FFF8E1', fg:'#F57F17' },
-            { title:'Ayomide OA',  date:'30 Jun, 8:20pm',  amount:30500, type:'expense', icon:'AO', bg:'#F3E5F5', fg:'#7B1FA2' },
+            { title:'Mathias Bee', date:'29 Jul, 5:00pm',  amount:52000,  type:'income',  icon:'MB', bg:'#FCE4EC', fg:'#C2185B', category:'Transfer',   status:'Received', paymentMethod:'Nexus Transfer' },
+            { title:'Uber Ride',   date:'24 Jul, 10:50pm', amount:12600,  type:'expense', icon:'🚗', bg:'#111',    fg:'#fff',    category:'Transport',  status:'Paid',     paymentMethod:'Apple Pay' },
+            { title:'John Doe',    date:'30 Jun, 5:00am',  amount:145000, type:'income',  icon:'JD', bg:'#E3F2FD', fg:'#1565C0', category:'Transfer',   status:'Received', paymentMethod:'Nexus Transfer' },
+            { title:'Amazon',      date:'26 Jun, 10:30am', amount:42000,  type:'expense', icon:'📦', bg:'#FFF8E1', fg:'#F57F17', category:'Shopping',   status:'Paid',     paymentMethod:'Card' },
+            { title:'Ayomide OA',  date:'30 Jun, 8:20pm',  amount:30500,  type:'expense', icon:'AO', bg:'#F3E5F5', fg:'#7B1FA2', category:'Eating Out', status:'Sent',     paymentMethod:'Nexus Transfer' },
         ],
         recipients: [
             { name:'Rebecca', sub:'Nexus Friend · 010-1234-5678',  isNexus:true },
@@ -2496,7 +2654,7 @@
 
     function goHome() {
         renderHomeHistory();
-        renderFullHistory();
+        renderFullHistory(null);
         renderRecipients();
         goTo('page-home');
     }
@@ -2774,13 +2932,95 @@
         el.innerHTML = state.transactions.slice(0,4).map(makeHistoryItem).join('');
         // update balance display
         const bd = document.getElementById('balance-display');
-        if(bd) bd.textContent = '$' + (state.balance / 100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        if(bd) bd.textContent = '₩' + state.balance.toLocaleString();
     }
 
-    function renderFullHistory() {
+    function renderFullHistory(filter) {
         const el = document.getElementById('full-history');
         if(!el) return;
-        el.innerHTML = state.transactions.map(makeHistoryItem).join('');
+        let txns = state.transactions;
+        if(filter === 'income')  txns = txns.filter(t => t.type === 'income');
+        if(filter === 'expense') txns = txns.filter(t => t.type === 'expense');
+        el.innerHTML = txns.map((t, i) => makeHistoryItemClickable(t, i)).join('');
+    }
+
+    function makeHistoryItemClickable(t, idx) {
+        const isIncome = t.type === 'income';
+        return `
+        <div class="history-item" onclick="openTxnDetail(${idx})" style="cursor:pointer;">
+            <div class="h-icon" style="background:${t.bg||'#eee'}; color:${t.fg||'#666'};">${t.icon||'?'}</div>
+            <div class="h-info">
+                <div class="h-title">${t.title}</div>
+                <div class="h-date">${t.date}</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+                <div class="h-amount ${isIncome?'income':'expense'}">${isIncome?'+':'-'} ₩${t.amount.toLocaleString()}</div>
+                <i class="fas fa-chevron-right" style="color:var(--gray-200); font-size:11px;"></i>
+            </div>
+        </div>`;
+    }
+
+    let historyCurrentFilter = 'all';
+    function historyFilter(type) {
+        historyCurrentFilter = type;
+        ['all','income','expense'].forEach(t => {
+            const el = document.getElementById('hf-'+t);
+            if(!el) return;
+            if(t === type) {
+                el.style.background = 'var(--green-primary)';
+                el.style.color = 'white';
+            } else {
+                el.style.background = 'var(--gray-100)';
+                el.style.color = 'var(--gray-500)';
+            }
+        });
+        renderFullHistory(type === 'all' ? null : type);
+    }
+
+    function openTxnDetail(idx) {
+        const t = state.transactions[idx];
+        if(!t) return;
+        const isIncome = t.type === 'income';
+        document.getElementById('txn-detail-icon').textContent = t.icon || '?';
+        document.getElementById('txn-detail-icon').style.background = t.bg || '#eee';
+        document.getElementById('txn-detail-icon').style.color = t.fg || '#666';
+        document.getElementById('txn-detail-amount').textContent = (isIncome ? '+ ' : '- ') + '₩' + t.amount.toLocaleString();
+        document.getElementById('txn-detail-amount').style.color = isIncome ? 'var(--green-primary)' : 'var(--black)';
+        const statusEl = document.getElementById('txn-detail-status');
+        statusEl.textContent = t.status || (isIncome ? 'Received' : 'Paid');
+        statusEl.style.background = isIncome ? 'var(--green-soft)' : 'var(--gray-100)';
+        statusEl.style.color = isIncome ? 'var(--green-primary)' : 'var(--gray-500)';
+        document.getElementById('txn-detail-title').textContent = t.title;
+        document.getElementById('txn-detail-date').textContent = t.date;
+        document.getElementById('txn-detail-category').textContent = t.category || 'Transfer';
+        document.getElementById('txn-detail-method').textContent = t.paymentMethod || 'Nexus';
+        document.getElementById('txn-detail-id').textContent = 'TXN-' + String(Date.now()).slice(-8);
+        goTo('page-txn-detail');
+    }
+
+    /* Card freeze toggle */
+    let cardFrozen = false;
+    function toggleCardFreeze() {
+        cardFrozen = !cardFrozen;
+        const toggle = document.getElementById('freeze-toggle');
+        const knob = document.getElementById('freeze-knob');
+        const label = document.getElementById('freeze-label');
+        const statusText = document.getElementById('card-status-text');
+        if(cardFrozen) {
+            toggle.style.background = '#1565C0';
+            knob.style.left = '21px';
+            label.textContent = 'Unfreeze Card';
+            statusText.textContent = 'Frozen';
+            statusText.style.color = '#1565C0';
+            showToast('❄️ 카드가 동결되었습니다');
+        } else {
+            toggle.style.background = 'var(--gray-200)';
+            knob.style.left = '3px';
+            label.textContent = 'Freeze Card';
+            statusText.textContent = 'Active';
+            statusText.style.color = 'var(--green-primary)';
+            showToast('✅ 카드 동결이 해제되었습니다');
+        }
     }
 
     /* ═══════════════════════════════
@@ -2802,7 +3042,7 @@
     ═══════════════════════════════ */
     document.addEventListener('DOMContentLoaded', () => {
         renderHomeHistory();
-        renderFullHistory();
+        renderFullHistory(null);
         renderRecipients();
         startOtpTimer();
         // Watch p-otp page show to restart timer
@@ -2826,7 +3066,7 @@
             setTimeout(() => { toast.style.display = 'none'; }, 1200);
             setTimeout(() => {
                 renderHomeHistory();
-                renderFullHistory();
+                renderFullHistory(null);
                 renderRecipients();
                 goHome();
             }, 600);
